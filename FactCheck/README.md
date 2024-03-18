@@ -13,10 +13,10 @@ No Hints.
 Ghidra makes a decent job analyzing this binary produced from C++
 code. From the resulting code, it seems like the remaining part of the
 flag is appended character by character from individual values,
-sometimes based on conditions. After some failed attempts in `gdb` with
-breakpoints at the `+=` operators of `basic_string` to capture the
-characters and / or the new string, it seems easier to evaluate the
-code by hand.
+sometimes based on conditions. After some failed attempts in `gdb`
+with breakpoints at the `+=` operators of `basic_string` to capture
+the characters and / or the new string, it seems easier to evaluate
+the code by hand.
 
 First I assign meaningful names to the variables. I choose names that
 represent their contents:
@@ -54,5 +54,5 @@ undefined8 main(void)
   std::__cxx11::basic_string<>::basic_string((char *)ctf_str,(allocator *)"picoCTF{wELF_d0N3_mate_");
 ```
 
-From here on, it's easy to evaluate the conditions and to find the
+From here on, it's easy to evaluate the conditionals and to find the
 missing characters for the flag by hand.
