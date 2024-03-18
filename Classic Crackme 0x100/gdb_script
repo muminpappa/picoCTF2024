@@ -1,0 +1,6 @@
+display /s $rdi
+display /s $rsi
+rbreak memcmp
+r
+c
+q
