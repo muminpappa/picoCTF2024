@@ -149,3 +149,13 @@ The sequence of '3' reappears at position 39, so the offset i 38. Now
 all the information is available. The script
 [`pwn_format_string_3.py`](pwn_format_string_3.py) automates the
 process.
+
+## Learnings ##
+
+* Find the offset (address) of a function in a dynamic library:
+  `readelf -s libc.so.6 | grep -E ' puts@@'`
+* Find the offset (address) of a function in a dynamic library: 
+  `objdump -T libc.so.6`
+* Find the global offset table (GOT) in an executable 
+  `objdump -d -j .got.plt format-string-3`
+
